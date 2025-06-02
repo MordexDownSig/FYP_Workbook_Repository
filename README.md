@@ -1,28 +1,11 @@
-# ENG40007 Engineering Project Workbook
+# ENG40007 Engineering Project
 
-Student: Mikailo Nedovic  
-Supervisor: Jingxin Zhang
-Institution: Swinburne University of Technology
+### Ownership Declaration  
+I, **Mikailo Nedovic**, hereby declare that all work contained in this repository is my original academic work unless otherwise cited. This includes, but is not limited to:  
+- Technical designs (CAD, simulations)  
+- Calculations and analyses  
+- Documentation and reflections  
 
+All third-party sources are properly attributed in accordance with academic integrity guidelines. Unauthorized use or distribution without explicit permission is prohibited.  
 
-## Repository Contents
-
-This repository contains all project documentation for Mikailo Nedovic's ENG40007 Engineering Project, including:
-
-### Project Documentation
-- `Workbook/` - Complete e-portfolio with weekly progress reports
-- `Reflections/` - Professional development journals
-- `Presentations/` - Final project presentation slides
-
-### Technical Files
-- `Calculations/`  
-  - Maximum demand analysis (`Maximum_Demand_Final.xlsx`)  
-  - Load profile simulations (`Load_Profiles/`)  
-- `CAD/` - AutoCAD drawings (DWG format)
-  - Single-line diagrams  
-  - Equipment layouts  
-- `Simulations/`  
-  - PSS/E model files (`.dyr`)  
-  - Python analysis scripts  
-  - Simulation results  
-
+© Mikailo Nedovic, [2025]. All rights reserved.  
