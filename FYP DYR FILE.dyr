@@ -1,0 +1,57 @@
+# Microgrid Dynamic Models (DYR) File
+# Simplified with only generators and loads
+# 51 residential/commercial lots + slack bus
+
+# ------------------------------------------------------------------------------
+# Generator Models (Type '1' for synchronous machines, '2' for inverters)
+# ------------------------------------------------------------------------------
+
+# Slack bus generator (main grid connection)
+GENROU 99999 1 'SLACK_GEN' 6.5 0.03 0.15 0.05 8.0 0.15 0.5 0.1 0.05 0.5 /
+
+#   BusNum  = 99999 (Bus number where generator is connected)
+#   ModelNum = 1 (Model type - 1 for synchronous machines)
+#   Name    = 'SLACK_GEN' (User-defined identifier)
+#   6.5     = (d-axis transient open-circuit time constant [s])
+#   0.03    = (d-axis subtransient open-circuit time constant [s])
+#   0.15    = (q-axis transient open-circuit time constant [s])
+#   0.05    = (q-axis subtransient open-circuit time constant [s])
+#   8.0     = (Inertia constant [MWs/MVA])
+#   0.15    = (Damping coefficient [pu])
+#   0.5     = (d-axis synchronous reactance [pu])
+#   0.1     = (q-axis synchronous reactance [pu])
+#   0.05    = (d-axis transient reactance [pu])
+#   0.5     = (d-axis subtransient reactance [pu])
+#   0.5 ... = (q-axis subtransient reactance [pu], optional)
+
+# Solar PV systems (one per lot, PV1 model)
+PV1 10101 2 'PV_LOT1' 1.0 0.8 0.3 0.2 0.1 0.05 0.5 0.1 0.05 0.5 /
+PV1 10102 2 'PV_LOT2' 1.0 0.8 0.3 0.2 0.1 0.05 0.5 0.1 0.05 0.5 /
+PV1 10103 2 'PV_LOT3' 1.0 0.8 0.3 0.2 0.1 0.05 0.5 0.1 0.05 0.5 /
+[... repeated for all 51 lots ...]
+PV1 10151 2 'PV_LOT51' 1.0 0.8 0.3 0.2 0.1 0.05 0.5 0.1 0.05 0.5 /
+
+# Battery systems (one per lot, REECCU1 model)
+REECCU1 20101 2 'BESS_LOT1' 0.5 0.3 0.1 0.05 5 0.1 0.05 0.5 0.1 0.05 /
+REECCU1 20102 2 'BESS_LOT2' 0.5 0.3 0.1 0.05 5 0.1 0.05 0.5 0.1 0.05 /
+[... repeated for all 51 lots ...]
+REECCU1 20151 2 'BESS_LOT51' 0.5 0.3 0.1 0.05 5 0.1 0.05 0.5 0.1 0.05 /
+
+# Backup diesel generators (10 critical lots)
+GENROU 30101 1 'DIESEL_1' 5.0 0.05 0.2 0.08 6.0 0.2 0.6 0.15 0.08 0.6 /
+[... up to DIESEL_10 ...]
+
+# ------------------------------------------------------------------------------
+# Load Models (CMLDBLU1 composite load model)
+# ------------------------------------------------------------------------------
+
+# Residential loads (40 standard lots)
+CMLDBLU1 40101 1 'LOAD_RES1' 0.7 0.3 0.4 0.2 0.1 0.05 0.3 0.1 0.05 0.3 /
+[... repeated for 40 residential lots ...]
+
+# Commercial loads (10 lots)
+CMLDBLU1 40201 1 'LOAD_COM1' 1.2 0.5 0.6 0.3 0.2 0.1 0.4 0.15 0.08 0.4 /
+[... repeated for 10 commercial lots ...]
+
+# Critical load (hospital)
+CMLDBLU1 40301 1 'LOAD_HOSP' 2.0 0.8 1.0 0.5 0.3 0.15 0.5 0.2 0.1 0.5 /
