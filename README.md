@@ -6,6 +6,6 @@ I, **Mikailo Nedovic**, hereby declare that all work contained in this repositor
 - Calculations and analyses  
 - Documentation and reflections  
 
-All third-party sources are properly attributed in accordance with academic integrity guidelines. Unauthorized use or distribution without explicit permission is prohibited.  
+All third-party sources are properly attributed in accordance with academic integrity guidelines. Unauthorised use or distribution without explicit permission is prohibited.  
 
 © Mikailo Nedovic, [2025]. All rights reserved.  
